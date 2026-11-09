@@ -554,8 +554,8 @@ nav a:hover {
     box-shadow: var(--shadow);
 }
 
-.product-card[hidden] {
-    display: none;
+#products .product-card[hidden] {
+    display: none !important;
 }
 
 .product-image {
@@ -859,3 +859,183 @@ nav a:hover {
         width: 100%;
     }
 }
+
+/* =========================
+   CUSTOMER TESTIMONIALS
+========================= */
+
+.testimonials-section {
+    background: var(--blue-pale);
+}
+
+.testimonial-carousel {
+    max-width: 760px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.testimonial-slide {
+    display: none;
+    min-height: 190px;
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial-slide.active {
+    display: block;
+    animation: testimonialFade 0.4s ease;
+}
+
+.testimonial-placeholder {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--blue-pale);
+    color: #579DD5;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.testimonial-stars {
+    color: #F4BD67;
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin: 18px 0;
+}
+
+.testimonial-slide blockquote {
+    color: var(--blue-dark);
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.testimonial-author {
+    color: #79AEDD;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.testimonial-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 15px;
+}
+
+.testimonial-arrow {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.testimonial-arrow:hover {
+    background: var(--blue);
+    color: white;
+}
+
+.testimonial-dots {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.testimonial-dots button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #D9EEFF;
+    cursor: pointer;
+}
+
+.testimonial-dots button.active {
+    width: 23px;
+    border-radius: 10px;
+    background: var(--blue);
+}
+
+.testimonial-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 25px;
+}
+
+@keyframes testimonialFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .testimonial-carousel {
+        padding: 18px;
+    }
+
+    .testimonial-slide blockquote {
+        font-size: 16px;
+    }
+
+    .testimonial-controls {
+        gap: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-slide.active {
+        animation: none;
+    }
+}
+/* Mengatur pembungkus utama menggunakan Flexbox */
+.social-list {
+ display: flex;
+ flex-wrap: wrap; /* Membikin item bisa turun ke bawah */
+ gap: 20px; /* Jarak antar kartu, silakan sesuaikan ukurannya */
+ justify-content: center;
+ width: 100%;
+}
+
+/* Mengatur ukuran standar untuk TikTok dan Instagram (50:50) */
+.social-list .social-card {
+ flex: 1 1 calc(50% - 10px); /* Lebar 50% dikurangi setengah dari gap */
+ min-width: 300px; /* Batas minimum agar responsif di layar HP/Mobile */
+ box-sizing: border-box;
+}
+
+/* Mengatur kartu WhatsApp agar berada di bawah, di tengah, dan ukurannya pas */
+.social-list .social-card.whatsapp-card {
+ flex: 0 1 calc(50% - 10px); /* Ukurannya disamakan 50% seperti yang di atas */
+ width: 100%;
+ margin-top: 10px; /* Jarak tambahan dari baris atas jika diperlukan */
+}
+
+/* Penyesuaian responsif: Jika dibuka di HP, semua kartu otomatis menjadi 100% (berurutan ke bawah) */
+@media (max-width: 768px) {
+ .social-list .social-card, 
+ .social-list .social-card.whatsapp-card {
+ flex: 1 1 100%;
+ }
+}
+
