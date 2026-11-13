@@ -14,7 +14,7 @@ const MARKETPLACE_URL = "";
 
 const TIKTOK_URL = "https://www.tiktok.com/@bocil.murka67?_r=1&_t=ZS-9BBDX7CLvD6";
 
-const INSTAGRAM_URL = "";
+const INSTAGRAM_URL = "https://www.instagram.com/kaisalatifahadzkia?utm_source=qr&exln=OGlhM2xuMTUyNDVq";
 
 // Gunakan kode negara 62.
 // Contoh format: 6281234567890
